@@ -42,4 +42,15 @@ describe 'DefaultApi' do
     end
   end
 
+  # unit tests for get_campaign
+  # Campaigns
+  # @param body Optional description in *Markdown*
+  # @param [Hash] opts the optional parameters
+  # @return [CampaignsGetItemResponse]
+  describe 'get_campaign test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
 end
