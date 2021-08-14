@@ -12,46 +12,24 @@ Swagger Codegen version: 3.0.27
 require 'date'
 
 module YandexDirectClient
-  class CampaignDailyBudget
-    attr_accessor :amount
+  class CampaignsGetItemRequestParamsPage
+    attr_accessor :limit
 
-    attr_accessor :mode
-
-    class EnumAttributeValidator
-      attr_reader :datatype
-      attr_reader :allowable_values
-
-      def initialize(datatype, allowable_values)
-        @allowable_values = allowable_values.map do |value|
-          case datatype.to_s
-          when /Integer/i
-            value.to_i
-          when /Float/i
-            value.to_f
-          else
-            value
-          end
-        end
-      end
-
-      def valid?(value)
-        !value || allowable_values.include?(value)
-      end
-    end
+    attr_accessor :offset
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'amount' => :'Amount',
-        :'mode' => :'Mode'
+        :'limit' => :'Limit',
+        :'offset' => :'Offset'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'amount' => :'Object',
-        :'mode' => :'Object'
+        :'limit' => :'Object',
+        :'offset' => :'Object'
       }
     end
 
@@ -65,23 +43,23 @@ module YandexDirectClient
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `YandexDirectClient::CampaignDailyBudget` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `YandexDirectClient::CampaignsGetItemRequestParamsPage` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `YandexDirectClient::CampaignDailyBudget`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `YandexDirectClient::CampaignsGetItemRequestParamsPage`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'amount')
-        self.amount = attributes[:'amount']
+      if attributes.key?(:'limit')
+        self.limit = attributes[:'limit']
       end
 
-      if attributes.key?(:'mode')
-        self.mode = attributes[:'mode']
+      if attributes.key?(:'offset')
+        self.offset = attributes[:'offset']
       end
     end
 
@@ -95,19 +73,7 @@ module YandexDirectClient
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      mode_validator = EnumAttributeValidator.new('Object', ['STANDARD', 'DISTRIBUTED'])
-      return false unless mode_validator.valid?(@mode)
       true
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] mode Object to be assigned
-    def mode=(mode)
-      validator = EnumAttributeValidator.new('Object', ['STANDARD', 'DISTRIBUTED'])
-      unless validator.valid?(mode)
-        fail ArgumentError, "invalid value for \"mode\", must be one of #{validator.allowable_values}."
-      end
-      @mode = mode
     end
 
     # Checks equality by comparing each attribute.
@@ -115,8 +81,8 @@ module YandexDirectClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          amount == o.amount &&
-          mode == o.mode
+          limit == o.limit &&
+          offset == o.offset
     end
 
     # @see the `==` method
@@ -128,7 +94,7 @@ module YandexDirectClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [amount, mode].hash
+      [limit, offset].hash
     end
 
     # Builds the object from hash

@@ -12,10 +12,16 @@ Swagger Codegen version: 3.0.27
 require 'date'
 
 module YandexDirectClient
-  class CampaignDailyBudget
-    attr_accessor :amount
+  class CampaignsGetItemRequestParamsSelectionCriteria
+    attr_accessor :ids
 
-    attr_accessor :mode
+    attr_accessor :types
+
+    attr_accessor :states
+
+    attr_accessor :statuses
+
+    attr_accessor :statuses_payment
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -42,16 +48,22 @@ module YandexDirectClient
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'amount' => :'Amount',
-        :'mode' => :'Mode'
+        :'ids' => :'Ids',
+        :'types' => :'Types',
+        :'states' => :'States',
+        :'statuses' => :'Statuses',
+        :'statuses_payment' => :'StatusesPayment'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'amount' => :'Object',
-        :'mode' => :'Object'
+        :'ids' => :'Object',
+        :'types' => :'Object',
+        :'states' => :'Object',
+        :'statuses' => :'Object',
+        :'statuses_payment' => :'Object'
       }
     end
 
@@ -65,23 +77,45 @@ module YandexDirectClient
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `YandexDirectClient::CampaignDailyBudget` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `YandexDirectClient::CampaignsGetItemRequestParamsSelectionCriteria` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `YandexDirectClient::CampaignDailyBudget`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `YandexDirectClient::CampaignsGetItemRequestParamsSelectionCriteria`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'amount')
-        self.amount = attributes[:'amount']
+      if attributes.key?(:'ids')
+        if (value = attributes[:'ids']).is_a?(Array)
+          self.ids = value
+        end
       end
 
-      if attributes.key?(:'mode')
-        self.mode = attributes[:'mode']
+      if attributes.key?(:'types')
+        if (value = attributes[:'types']).is_a?(Array)
+          self.types = value
+        end
+      end
+
+      if attributes.key?(:'states')
+        if (value = attributes[:'states']).is_a?(Array)
+          self.states = value
+        end
+      end
+
+      if attributes.key?(:'statuses')
+        if (value = attributes[:'statuses']).is_a?(Array)
+          self.statuses = value
+        end
+      end
+
+      if attributes.key?(:'statuses_payment')
+        if (value = attributes[:'statuses_payment']).is_a?(Array)
+          self.statuses_payment = value
+        end
       end
     end
 
@@ -95,19 +129,7 @@ module YandexDirectClient
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      mode_validator = EnumAttributeValidator.new('Object', ['STANDARD', 'DISTRIBUTED'])
-      return false unless mode_validator.valid?(@mode)
       true
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] mode Object to be assigned
-    def mode=(mode)
-      validator = EnumAttributeValidator.new('Object', ['STANDARD', 'DISTRIBUTED'])
-      unless validator.valid?(mode)
-        fail ArgumentError, "invalid value for \"mode\", must be one of #{validator.allowable_values}."
-      end
-      @mode = mode
     end
 
     # Checks equality by comparing each attribute.
@@ -115,8 +137,11 @@ module YandexDirectClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          amount == o.amount &&
-          mode == o.mode
+          ids == o.ids &&
+          types == o.types &&
+          states == o.states &&
+          statuses == o.statuses &&
+          statuses_payment == o.statuses_payment
     end
 
     # @see the `==` method
@@ -128,7 +153,7 @@ module YandexDirectClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [amount, mode].hash
+      [ids, types, states, statuses, statuses_payment].hash
     end
 
     # Builds the object from hash
