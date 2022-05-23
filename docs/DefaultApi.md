@@ -77,9 +77,11 @@ end
 
 api_instance = YandexDirectClient::DefaultApi.new
 body = YandexDirectClient::CampaignsGetItemRequest.new # CampaignsGetItemRequest | Optional description in *Markdown*
-
+opts = {
+  client_login: 'client_login_example' # String | 
+}
 begin
-  result = api_instance.get_campaign(body)
+  result = api_instance.get_campaign(body, opts)
   p result
 rescue YandexDirectClient::ApiError => e
   puts "Exception when calling DefaultApi->get_campaign: #{e}"
