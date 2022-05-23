@@ -26,7 +26,7 @@ module YandexDirectClient
     end
 
     def self.default
-      @@default ||= ApiClient.new
+      @default ||= ApiClient.new
     end
 
     # Call an API with given options.

@@ -113,6 +113,8 @@ module YandexDirectClient
 
     attr_accessor :force_ending_format
 
+    attr_accessor :client_login
+
     def initialize
       @scheme = 'https'
       @host = 'api-sandbox.direct.yandex.com'

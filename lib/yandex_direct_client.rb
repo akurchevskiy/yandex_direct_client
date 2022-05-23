@@ -5,6 +5,7 @@ require 'yandex_direct_client/version'
 require 'yandex_direct_client/configuration'
 
 # Models
+require 'yandex_direct_client/models/base_model'
 require 'yandex_direct_client/models/campaign'
 require 'yandex_direct_client/models/campaign_daily_budget'
 require 'yandex_direct_client/models/campaign_funds'
@@ -42,6 +43,8 @@ require 'yandex_direct_client/models/grand'
 
 # APIs
 require 'yandex_direct_client/api/default_api'
+require 'yandex_direct_client/api/api_agent_clients'
+require 'yandex_direct_client/api/api_campaign'
 
 module YandexDirectClient
   class << self
