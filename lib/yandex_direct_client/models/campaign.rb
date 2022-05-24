@@ -30,10 +30,36 @@ module YandexDirectClient
     attr_accessor :time_targeting
     attr_accessor :time_zone
 
-    TYPES = ["TEXT_CAMPAIGN", "MOBILE_APP_CAMPAIGN", "DYNAMIC_TEXT_CAMPAIGN", "CPM_BANNER_CAMPAIGN", "SMART_CAMPAIGN"]
-    STATES = ["ARCHIVED", "CONVERTED", "ENDED", "OFF", "ON", "SUSPENDED" ]
-    STATUSES = ["ACCEPTED", "DRAFT", "MODERATION", "REJECTED"]
-    STATUSES_PAYMENT = [ "DISALLOWED", "ALLOWED"]
+    # Types campaigns
+    TYPE_TEXT_CAMPAIGN = "TEXT_CAMPAIGN"
+    TYPE_MOBILE_APP_CAMPAIGN = "MOBILE_APP_CAMPAIGN"
+    TYPE_DYNAMIC_TEXT_CAMPAIGN = "DYNAMIC_TEXT_CAMPAIGN"
+    TYPE_CPM_BANNER_CAMPAIGN = "CPM_BANNER_CAMPAIGN"
+    TYPE_SMART_CAMPAIGN = "SMART_CAMPAIGN"
+    # States campaign
+    STATE_ARCHIVED = "ARCHIVED"
+    STATE_CONVERTED = "CONVERTED"
+    STATE_ENDED = "ENDED"
+    STATE_OFF = "OFF"
+    STATE_ON = "ON"
+    STATE_SUSPENDED = "SUSPENDED"
+    # Statuses Campaign
+    STATUS_ACCEPTED = "ACCEPTED"
+    STATUS_DRAFT = "DRAFT"
+    STATUS_MODERATION = "MODERATION"
+    STATUS_REJECTED = "REJECTED"
+    # STATUSES PAYMENT
+    STATUS_PAYMENT_DISALLOWED = "DISALLOWED"
+    STATUS_PAYMENT_ALLOWED = "ALLOWED"
+
+    TYPES = [self::TYPE_TEXT_CAMPAIGN, self::TYPE_MOBILE_APP_CAMPAIGN, self::TYPE_DYNAMIC_TEXT_CAMPAIGN,
+             self::TYPE_CPM_BANNER_CAMPAIGN, self::TYPE_SMART_CAMPAIGN]
+    STATES = [self::STATE_ARCHIVED, self::STATE_CONVERTED, self::STATE_ENDED, self::STATE_OFF,
+              self::STATE_ON, self::STATE_SUSPENDED]
+    STATUSES = [self::STATUS_ACCEPTED, self::STATUS_DRAFT, self::STATUS_MODERATION, self::STATUS_REJECTED]
+    STATUSES_PAYMENT = [ self::STATUS_PAYMENT_ALLOWED, self::STATUS_PAYMENT_DISALLOWED]
+
+    # Fields for all campaigns
     FIELD_NAMES = ["BlockedIps", "ExcludedSites", "Currency", "DailyBudget", "Notification", "EndDate", "Funds",
                    "ClientInfo", "Id", "Name", "NegativeKeywords", "RepresentedBy", "StartDate", "Statistics",
                    "State", "Status", "StatusPayment", "StatusClarification", "SourceId", "TimeTargeting",
@@ -219,15 +245,15 @@ module YandexDirectClient
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      type_validator = EnumAttributeValidator.new('Object', ['TEXT_CAMPAIGN', 'MOBILE_APP_CAMPAIGN', 'DYNAMIC_TEXT_CAMPAIGN', 'SMART_CAMPAIGN', 'UNKNOWN'])
+      type_validator = EnumAttributeValidator.new('Object', self::TYPES)
       return false unless type_validator.valid?(@type)
-      status_validator = EnumAttributeValidator.new('Object', ['ACCEPTED', 'DRAFT', 'MODERATION', 'REJECTED', 'UNKNOWN'])
+      status_validator = EnumAttributeValidator.new('Object', self::STATUSES)
       return false unless status_validator.valid?(@status)
-      state_validator = EnumAttributeValidator.new('Object', ['ARCHIVED', 'CONVERTED', 'ENDED', 'OFF', 'ON', 'SUSPENDED'])
+      state_validator = EnumAttributeValidator.new('Object', self::STATES)
       return false unless state_validator.valid?(@state)
-      status_payment_validator = EnumAttributeValidator.new('Object', ['DISALLOWED', 'ALLOWED'])
+      status_payment_validator = EnumAttributeValidator.new('Object', self::STATUSES_PAYMENT)
       return false unless status_payment_validator.valid?(@status_payment)
-      currency_validator = EnumAttributeValidator.new('Object', ['RUB', 'BYN', 'CHF', 'EUR', 'KZT', 'TRY', 'UAH', 'USD'])
+      currency_validator = EnumAttributeValidator.new('Object', YandexDirectClient::Dictionaries::CURRENCIES)
       return false unless currency_validator.valid?(@currency)
       true
     end
@@ -235,7 +261,7 @@ module YandexDirectClient
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] type Object to be assigned
     def type=(type)
-      validator = EnumAttributeValidator.new('Object', ['TEXT_CAMPAIGN', 'MOBILE_APP_CAMPAIGN', 'DYNAMIC_TEXT_CAMPAIGN', 'SMART_CAMPAIGN', 'UNKNOWN'])
+      validator = EnumAttributeValidator.new('Object', self::TYPES )
       unless validator.valid?(type)
         fail ArgumentError, "invalid value for \"type\", must be one of #{validator.allowable_values}."
       end
@@ -245,7 +271,7 @@ module YandexDirectClient
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] status Object to be assigned
     def status=(status)
-      validator = EnumAttributeValidator.new('Object', ['ACCEPTED', 'DRAFT', 'MODERATION', 'REJECTED', 'UNKNOWN'])
+      validator = EnumAttributeValidator.new('Object', self::STATUSES)
       unless validator.valid?(status)
         fail ArgumentError, "invalid value for \"status\", must be one of #{validator.allowable_values}."
       end
@@ -255,7 +281,7 @@ module YandexDirectClient
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] state Object to be assigned
     def state=(state)
-      validator = EnumAttributeValidator.new('Object', ['ARCHIVED', 'CONVERTED', 'ENDED', 'OFF', 'ON', 'SUSPENDED'])
+      validator = EnumAttributeValidator.new('Object', self::STATES)
       unless validator.valid?(state)
         fail ArgumentError, "invalid value for \"state\", must be one of #{validator.allowable_values}."
       end
@@ -265,7 +291,7 @@ module YandexDirectClient
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] status_payment Object to be assigned
     def status_payment=(status_payment)
-      validator = EnumAttributeValidator.new('Object', ['DISALLOWED', 'ALLOWED'])
+      validator = EnumAttributeValidator.new('Object', self::STATUSES_PAYMENT)
       unless validator.valid?(status_payment)
         fail ArgumentError, "invalid value for \"status_payment\", must be one of #{validator.allowable_values}."
       end
@@ -275,7 +301,7 @@ module YandexDirectClient
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] currency Object to be assigned
     def currency=(currency)
-      validator = EnumAttributeValidator.new('Object', ['RUB', 'BYN', 'CHF', 'EUR', 'KZT', 'TRY', 'UAH', 'USD'])
+      validator = EnumAttributeValidator.new('Object', YandexDirectClient::Dictionaries::CURRENCIES)
       unless validator.valid?(currency)
         fail ArgumentError, "invalid value for \"currency\", must be one of #{validator.allowable_values}."
       end
@@ -319,7 +345,10 @@ module YandexDirectClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, start_date, type, status, state, status_payment, status_clarification, source_id, statistics, currency, funds, represented_by, daily_budget, end_date, negative_keywords, blocked_ips, excluded_sites, text_campaign, mobile_app_campaign, dynamic_text_campaign, cpm_banner_campaign, smart_campaign, client_info, notification, time_targeting, time_zone].hash
+      [id, name, start_date, type, status, state, status_payment, status_clarification, source_id, statistics,
+       currency, funds, represented_by, daily_budget, end_date, negative_keywords, blocked_ips, excluded_sites,
+       text_campaign, mobile_app_campaign, dynamic_text_campaign, cpm_banner_campaign, smart_campaign, client_info,
+       notification, time_targeting, time_zone].hash
     end
   end
 end

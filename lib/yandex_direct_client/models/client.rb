@@ -14,6 +14,10 @@ module YandexDirectClient
     attr_accessor :login
     attr_accessor :notification
 
+    ARCHIVED_YES = "YES"
+    ARCHIVED_NO = "NO"
+    ARCHIVED = [self::ARCHIVED_YES, self::ARCHIVED_NO]
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -101,9 +105,9 @@ module YandexDirectClient
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      archived_validator = EnumAttributeValidator.new('Object', ['YES', 'NO'])
+      archived_validator = EnumAttributeValidator.new('Object', self::ARCHIVED)
       return false unless archived_validator.valid?(@archived)
-      currency_validator = EnumAttributeValidator.new('Object', ['RUB', 'BYN', 'CHF', 'EUR', 'KZT', 'TRY', 'UAH', 'USD'])
+      currency_validator = EnumAttributeValidator.new('Object', YandexDirectClient::Dictionaries::CURRENCIES)
       return false unless currency_validator.valid?(@currency)
       true
     end
@@ -111,7 +115,7 @@ module YandexDirectClient
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] archived Object to be assigned
     def archived=(archived)
-      validator = EnumAttributeValidator.new('Object', ['YES', 'NO'])
+      validator = EnumAttributeValidator.new('Object', self::ARCHIVED)
       unless validator.valid?(archived)
         fail ArgumentError, "invalid value for \"archived\", must be one of #{validator.allowable_values}."
       end
@@ -121,7 +125,7 @@ module YandexDirectClient
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] currency Object to be assigned
     def currency=(currency)
-      validator = EnumAttributeValidator.new('Object', ['RUB', 'BYN', 'CHF', 'EUR', 'KZT', 'TRY', 'UAH', 'USD'])
+      validator = EnumAttributeValidator.new('Object', YandexDirectClient::Dictionaries::CURRENCIES)
       unless validator.valid?(currency)
         fail ArgumentError, "invalid value for \"currency\", must be one of #{validator.allowable_values}."
       end

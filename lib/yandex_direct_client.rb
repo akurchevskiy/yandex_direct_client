@@ -39,6 +39,7 @@ require 'yandex_direct_client/models/client_notification_email_subscriptions'
 require 'yandex_direct_client/models/client_notification_representatives'
 require 'yandex_direct_client/models/client_notification_restrictions'
 require 'yandex_direct_client/models/client_notification_settings'
+require 'yandex_direct_client/models/dictionaries'
 require 'yandex_direct_client/models/grand'
 
 # APIs

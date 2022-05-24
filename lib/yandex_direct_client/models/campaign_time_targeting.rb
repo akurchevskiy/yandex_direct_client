@@ -6,6 +6,10 @@ module YandexDirectClient
     attr_accessor :consider_working_weekends
     attr_accessor :holidays_schedule
 
+    VARIANT_YES = "YES"
+    VARIANT_NO = "NO"
+    CONSIDER_WORKING_VARIANTS = [self::VARIANT_NO, self::VARIANT_YES]
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -41,7 +45,7 @@ module YandexDirectClient
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      consider_working_weekends_validator = EnumAttributeValidator.new('Object', ['YES', 'NO'])
+      consider_working_weekends_validator = EnumAttributeValidator.new('Object', self::CONSIDER_WORKING_VARIANTS)
       return false unless consider_working_weekends_validator.valid?(@consider_working_weekends)
       true
     end
@@ -49,7 +53,7 @@ module YandexDirectClient
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] consider_working_weekends Object to be assigned
     def consider_working_weekends=(consider_working_weekends)
-      validator = EnumAttributeValidator.new('Object', ['YES', 'NO'])
+      validator = EnumAttributeValidator.new('Object', self::CONSIDER_WORKING_VARIANTS)
       unless validator.valid?(consider_working_weekends)
         fail ArgumentError, "invalid value for \"consider_working_weekends\", must be one of #{validator.allowable_values}."
       end

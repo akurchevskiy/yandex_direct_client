@@ -20,7 +20,7 @@ module YandexDirectClient
   
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
-    def iset_attributes(attributes = {})
+    def set_attributes(attributes = {})
 
       if attributes.key?(:'clients')
         if (value = attributes[:'clients']).is_a?(Array)
