@@ -8,7 +8,7 @@ module YandexDirectClient
 
     MODE_CAMPAIGN_FUNDS = "CAMPAIGN_FUNDS"
     MODE_SHARED_ACCOUNT_FUNDS = "SHARED_ACCOUNT_FUNDS"
-    MODES = [self::MODE_CAMPAIGN_FUNDS, self::MODE_SHARED_ACCOUNT_FUNDS]
+    MODES = [MODE_CAMPAIGN_FUNDS, MODE_SHARED_ACCOUNT_FUNDS]
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -46,7 +46,7 @@ module YandexDirectClient
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      mode_validator = EnumAttributeValidator.new('Object', self::MODES)
+      mode_validator = EnumAttributeValidator.new('Object', MODES)
       return false unless mode_validator.valid?(@mode)
       true
     end
@@ -54,7 +54,7 @@ module YandexDirectClient
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] mode Object to be assigned
     def mode=(mode)
-      validator = EnumAttributeValidator.new('Object', self::MODES)
+      validator = EnumAttributeValidator.new('Object', MODES)
       unless validator.valid?(mode)
         fail ArgumentError, "invalid value for \"mode\", must be one of #{validator.allowable_values}."
       end

@@ -9,8 +9,8 @@ module YandexDirectClient
     attr_accessor :send_warnings
     VARIANT_YES = "YES"
     VARIANT_NO = "NO"
-    SEND_ACCOUNT_NEWS_VARIANTS = [self::VARIANT_YES, self::VARIANT_NO]
-    SEND_WARNINGS_VARIANTS = [self::VARIANT_YES, self::VARIANT_NO]
+    SEND_ACCOUNT_NEWS_VARIANTS = [VARIANT_YES, VARIANT_NO]
+    SEND_WARNINGS_VARIANTS = [VARIANT_YES, VARIANT_NO]
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -58,9 +58,9 @@ module YandexDirectClient
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      send_account_news_validator = EnumAttributeValidator.new('Object', self::SEND_ACCOUNT_NEWS_VARIANTS)
+      send_account_news_validator = EnumAttributeValidator.new('Object', SEND_ACCOUNT_NEWS_VARIANTS)
       return false unless send_account_news_validator.valid?(@send_account_news)
-      send_warnings_validator = EnumAttributeValidator.new('Object', self::SEND_WARNINGS_VARIANTS)
+      send_warnings_validator = EnumAttributeValidator.new('Object', SEND_WARNINGS_VARIANTS)
       return false unless send_warnings_validator.valid?(@send_warnings)
       true
     end
@@ -68,7 +68,7 @@ module YandexDirectClient
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] send_account_news Object to be assigned
     def send_account_news=(send_account_news)
-      validator = EnumAttributeValidator.new('Object', self::SEND_ACCOUNT_NEWS_VARIANTS)
+      validator = EnumAttributeValidator.new('Object', SEND_ACCOUNT_NEWS_VARIANTS)
       unless validator.valid?(send_account_news)
         fail ArgumentError, "invalid value for \"send_account_news\", must be one of #{validator.allowable_values}."
       end
@@ -78,7 +78,7 @@ module YandexDirectClient
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] send_warnings Object to be assigned
     def send_warnings=(send_warnings)
-      validator = EnumAttributeValidator.new('Object', self::SEND_WARNINGS_VARIANTS)
+      validator = EnumAttributeValidator.new('Object', SEND_WARNINGS_VARIANTS)
       unless validator.valid?(send_warnings)
         fail ArgumentError, "invalid value for \"send_warnings\", must be one of #{validator.allowable_values}."
       end

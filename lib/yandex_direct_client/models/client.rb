@@ -16,7 +16,7 @@ module YandexDirectClient
 
     ARCHIVED_YES = "YES"
     ARCHIVED_NO = "NO"
-    ARCHIVED = [self::ARCHIVED_YES, self::ARCHIVED_NO]
+    ARCHIVED = [ARCHIVED_YES, ARCHIVED_NO]
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -105,7 +105,7 @@ module YandexDirectClient
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      archived_validator = EnumAttributeValidator.new('Object', self::ARCHIVED)
+      archived_validator = EnumAttributeValidator.new('Object', ARCHIVED)
       return false unless archived_validator.valid?(@archived)
       currency_validator = EnumAttributeValidator.new('Object', YandexDirectClient::Dictionaries::CURRENCIES)
       return false unless currency_validator.valid?(@currency)
@@ -115,7 +115,7 @@ module YandexDirectClient
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] archived Object to be assigned
     def archived=(archived)
-      validator = EnumAttributeValidator.new('Object', self::ARCHIVED)
+      validator = EnumAttributeValidator.new('Object', ARCHIVED)
       unless validator.valid?(archived)
         fail ArgumentError, "invalid value for \"archived\", must be one of #{validator.allowable_values}."
       end

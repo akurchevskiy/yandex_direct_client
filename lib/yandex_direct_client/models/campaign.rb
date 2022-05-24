@@ -52,12 +52,12 @@ module YandexDirectClient
     STATUS_PAYMENT_DISALLOWED = "DISALLOWED"
     STATUS_PAYMENT_ALLOWED = "ALLOWED"
 
-    TYPES = [self::TYPE_TEXT_CAMPAIGN, self::TYPE_MOBILE_APP_CAMPAIGN, self::TYPE_DYNAMIC_TEXT_CAMPAIGN,
-             self::TYPE_CPM_BANNER_CAMPAIGN, self::TYPE_SMART_CAMPAIGN]
-    STATES = [self::STATE_ARCHIVED, self::STATE_CONVERTED, self::STATE_ENDED, self::STATE_OFF,
-              self::STATE_ON, self::STATE_SUSPENDED]
-    STATUSES = [self::STATUS_ACCEPTED, self::STATUS_DRAFT, self::STATUS_MODERATION, self::STATUS_REJECTED]
-    STATUSES_PAYMENT = [ self::STATUS_PAYMENT_ALLOWED, self::STATUS_PAYMENT_DISALLOWED]
+    TYPES = [TYPE_TEXT_CAMPAIGN, TYPE_MOBILE_APP_CAMPAIGN, TYPE_DYNAMIC_TEXT_CAMPAIGN,
+             TYPE_CPM_BANNER_CAMPAIGN, TYPE_SMART_CAMPAIGN]
+    STATES = [STATE_ARCHIVED, STATE_CONVERTED, STATE_ENDED, STATE_OFF,
+              STATE_ON, STATE_SUSPENDED]
+    STATUSES = [STATUS_ACCEPTED, STATUS_DRAFT, STATUS_MODERATION, STATUS_REJECTED]
+    STATUSES_PAYMENT = [ STATUS_PAYMENT_ALLOWED, STATUS_PAYMENT_DISALLOWED]
 
     # Fields for all campaigns
     FIELD_NAMES = ["BlockedIps", "ExcludedSites", "Currency", "DailyBudget", "Notification", "EndDate", "Funds",
@@ -245,13 +245,13 @@ module YandexDirectClient
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      type_validator = EnumAttributeValidator.new('Object', self::TYPES)
+      type_validator = EnumAttributeValidator.new('Object', TYPES)
       return false unless type_validator.valid?(@type)
-      status_validator = EnumAttributeValidator.new('Object', self::STATUSES)
+      status_validator = EnumAttributeValidator.new('Object', STATUSES)
       return false unless status_validator.valid?(@status)
-      state_validator = EnumAttributeValidator.new('Object', self::STATES)
+      state_validator = EnumAttributeValidator.new('Object', STATES)
       return false unless state_validator.valid?(@state)
-      status_payment_validator = EnumAttributeValidator.new('Object', self::STATUSES_PAYMENT)
+      status_payment_validator = EnumAttributeValidator.new('Object', STATUSES_PAYMENT)
       return false unless status_payment_validator.valid?(@status_payment)
       currency_validator = EnumAttributeValidator.new('Object', YandexDirectClient::Dictionaries::CURRENCIES)
       return false unless currency_validator.valid?(@currency)
@@ -261,7 +261,7 @@ module YandexDirectClient
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] type Object to be assigned
     def type=(type)
-      validator = EnumAttributeValidator.new('Object', self::TYPES )
+      validator = EnumAttributeValidator.new('Object', TYPES )
       unless validator.valid?(type)
         fail ArgumentError, "invalid value for \"type\", must be one of #{validator.allowable_values}."
       end
@@ -271,7 +271,7 @@ module YandexDirectClient
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] status Object to be assigned
     def status=(status)
-      validator = EnumAttributeValidator.new('Object', self::STATUSES)
+      validator = EnumAttributeValidator.new('Object', STATUSES)
       unless validator.valid?(status)
         fail ArgumentError, "invalid value for \"status\", must be one of #{validator.allowable_values}."
       end
@@ -281,7 +281,7 @@ module YandexDirectClient
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] state Object to be assigned
     def state=(state)
-      validator = EnumAttributeValidator.new('Object', self::STATES)
+      validator = EnumAttributeValidator.new('Object', STATES)
       unless validator.valid?(state)
         fail ArgumentError, "invalid value for \"state\", must be one of #{validator.allowable_values}."
       end
@@ -291,7 +291,7 @@ module YandexDirectClient
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] status_payment Object to be assigned
     def status_payment=(status_payment)
-      validator = EnumAttributeValidator.new('Object', self::STATUSES_PAYMENT)
+      validator = EnumAttributeValidator.new('Object', STATUSES_PAYMENT)
       unless validator.valid?(status_payment)
         fail ArgumentError, "invalid value for \"status_payment\", must be one of #{validator.allowable_values}."
       end
