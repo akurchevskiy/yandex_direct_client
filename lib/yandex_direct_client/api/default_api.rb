@@ -2,7 +2,9 @@ module YandexDirectClient
   class DefaultApi
     attr_accessor :api_client
     attr_reader :local_path
-    attr_reader :use_client_login
+
+    METHOD_GET = 'get'
+
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
@@ -12,7 +14,6 @@ module YandexDirectClient
     # @param [Hash] opts the optional parameters
     # @return [Array<(ClientGetItemResponse, Integer, Hash)>] ClientGetItemResponse data, response status code and response headers
     def send_with_http_info(body, opts = {})
-      puts "obj=#{@api_client}"
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.agencyclientsget ...'
       end
@@ -21,10 +22,8 @@ module YandexDirectClient
         fail ArgumentError, "Missing the required parameter 'body' when calling DefaultApi.agencyclientsget"
       end
 
-      puts "Add params"
       # resource path
       local_var_path = @local_path
-      puts "local_path=#{@local_path}"
       # query parameters
       query_params = opts[:query_params] || {}
 
@@ -34,8 +33,8 @@ module YandexDirectClient
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      if @use_client_login
-        header_params[:'Client-Login'] = @api_client.config.client_login
+      if opts[:client_login]
+        header_params['Client-Login'] = opts[:client_login]
       end
       # form parameters
       form_params = opts[:form_params] || {}

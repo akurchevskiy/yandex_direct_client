@@ -3,7 +3,6 @@ module YandexDirectClient
     def initialize(api_client = ApiClient.default)
       super
       @local_path = '/campaigns'
-      @use_client_login = true
     end
 
     def get_campaign (body, opts = {})

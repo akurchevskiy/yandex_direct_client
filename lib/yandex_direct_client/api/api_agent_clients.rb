@@ -4,7 +4,6 @@ module YandexDirectClient
     def initialize(api_client = ApiClient.new)
       super
       @local_path = '/agencyclients'
-      @use_client_login = true
     end
     # AgencyClients
     # @param body Optional description in *Markdown*
