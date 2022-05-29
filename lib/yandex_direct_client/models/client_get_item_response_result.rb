@@ -14,14 +14,13 @@ module YandexDirectClient
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'clients' => :'Object'
+        :'clients' => :'Array<Clients>'
       }
     end
   
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def set_attributes(attributes = {})
-
       if attributes.key?(:'clients')
         if (value = attributes[:'clients']).is_a?(Array)
           self.clients = value

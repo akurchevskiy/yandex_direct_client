@@ -1,7 +1,7 @@
 require 'date'
 
 module YandexDirectClient
-  class Client < BaseModel
+  class Clients < BaseModel
     attr_accessor :account_quality
     attr_accessor :archived
     attr_accessor :client_id
