@@ -1,14 +1,14 @@
-require 'date'
-
 module YandexDirectClient
-  class CampaignNotificationEmailSettings < BaseModel
+  class EmailSettings < BaseModel
     attr_accessor :email
     attr_accessor :check_position_interval
     attr_accessor :warning_balance
     attr_accessor :send_account_news
     attr_accessor :send_warnings
+
     VARIANT_YES = "YES"
     VARIANT_NO = "NO"
+
     SEND_ACCOUNT_NEWS_VARIANTS = [VARIANT_YES, VARIANT_NO]
     SEND_WARNINGS_VARIANTS = [VARIANT_YES, VARIANT_NO]
     # Attribute mapping from ruby-style variable name to JSON key.

@@ -14,7 +14,7 @@ module YandexDirectClient
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'campaigns' => :'Object'
+        :'campaigns' => :'Array<Campaigns>'
       }
     end
 

@@ -1,7 +1,7 @@
 require 'date'
 
 module YandexDirectClient
-  class Campaign < BaseModel
+  class Campaigns < BaseModel
     attr_accessor :id
     attr_accessor :name
     attr_accessor :start_date
@@ -306,6 +306,14 @@ module YandexDirectClient
         fail ArgumentError, "invalid value for \"currency\", must be one of #{validator.allowable_values}."
       end
       @currency = currency
+    end
+
+    def funds=(funds)
+      @funds = Funds.build_from_hash(funds)
+    end
+
+    def notification=(notification)
+      @notification = Notification.build_from_hash(notification)
     end
 
     # Checks equality by comparing each attribute.

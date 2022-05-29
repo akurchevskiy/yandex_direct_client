@@ -1,9 +1,6 @@
-require 'date'
-
 module YandexDirectClient
-  class CampaignNotification < BaseModel
+  class Notification < BaseModel
     attr_accessor :sms_settings
-
     attr_accessor :email_settings
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -47,6 +44,14 @@ module YandexDirectClient
       self.class == o.class &&
           sms_settings == o.sms_settings &&
           email_settings == o.email_settings
+    end
+
+    def sms_settings=(sms_settings)
+      @sms_settings = SmsSettings.build_from_hash(sms_settings)
+    end
+
+    def email_settings=(email_settings)
+      @email_settings = EmailSettings.build_from_hash(email_settings)
     end
 
     # Calculates hash code according to all attributes.

@@ -1,7 +1,7 @@
 require 'date'
 
 module YandexDirectClient
-  class CampaignNotificationSmsSettings < BaseModel
+  class SmsSettings < BaseModel
     attr_accessor :events
     attr_accessor :time_from
     attr_accessor :time_to
