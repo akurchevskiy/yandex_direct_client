@@ -6,6 +6,15 @@ require 'yandex_direct_client/configuration'
 
 # Models
 require 'yandex_direct_client/models/base_model'
+require 'yandex_direct_client/models/ad_group'
+require 'yandex_direct_client/models/ad_group_negative_keywords'
+require 'yandex_direct_client/models/ad_group_restricted_region_ids'
+require 'yandex_direct_client/models/ads_groups_get_item_request'
+require 'yandex_direct_client/models/ads_groups_get_item_request_params'
+require 'yandex_direct_client/models/ads_groups_get_item_request_params_page'
+require 'yandex_direct_client/models/ads_groups_get_item_request_params_selection_criteria'
+require 'yandex_direct_client/models/ads_groups_get_item_response'
+require 'yandex_direct_client/models/ads_groups_get_item_response_result'
 require 'yandex_direct_client/models/campaign'
 require 'yandex_direct_client/models/campaign_daily_budget'
 require 'yandex_direct_client/models/campaign_funds'
@@ -40,12 +49,21 @@ require 'yandex_direct_client/models/client_notification_representatives'
 require 'yandex_direct_client/models/client_notification_restrictions'
 require 'yandex_direct_client/models/client_notification_settings'
 require 'yandex_direct_client/models/dictionaries'
+require 'yandex_direct_client/models/dynamic_text_ad_group'
+require 'yandex_direct_client/models/dynamic_text_feed_ad_group'
+require 'yandex_direct_client/models/dynamic_text_feed_ad_group_autotargeting_categories'
+require 'yandex_direct_client/models/dynamic_text_feed_ad_group_autotargeting_categories_items'
 require 'yandex_direct_client/models/grand'
+require 'yandex_direct_client/models/mobile_app_ad_group'
+require 'yandex_direct_client/models/mobile_app_ad_group_app_icon_moderation'
+require 'yandex_direct_client/models/smart_ad_group'
+require 'yandex_direct_client/models/text_ad_group_feed_params'
 
 # APIs
 require 'yandex_direct_client/api/default_api'
 require 'yandex_direct_client/api/api_agent_clients'
 require 'yandex_direct_client/api/api_campaign'
+require 'yandex_direct_client/api/api_ads'
 
 module YandexDirectClient
   class << self
