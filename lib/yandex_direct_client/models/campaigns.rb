@@ -258,6 +258,10 @@ module YandexDirectClient
       true
     end
 
+    def id=(id)
+      @id = id
+    end
+
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] type Object to be assigned
     def type=(type)
