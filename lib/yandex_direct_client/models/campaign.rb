@@ -1,5 +1,3 @@
-require 'date'
-
 module YandexDirectClient
   class Campaign < BaseModel
     attr_accessor :id
@@ -124,7 +122,7 @@ module YandexDirectClient
         cpm_banner_campaign: 'Object',
         smart_campaign: 'Object',
         client_info: 'Object',
-        notification: 'Object',
+        notification: 'Notification',
         time_targeting: 'Object',
         time_zone: 'Object'
       }
@@ -310,14 +308,6 @@ module YandexDirectClient
         fail ArgumentError, "invalid value for \"currency\", must be one of #{validator.allowable_values}."
       end
       @currency = currency
-    end
-
-    def funds=(funds)
-      @funds = Funds.build_from_hash(funds)
-    end
-
-    def notification=(notification)
-      @notification = Notification.build_from_hash(notification)
     end
 
     # Checks equality by comparing each attribute.
