@@ -15,11 +15,11 @@ module YandexDirectClient
     # @return [Array<(ClientGetItemResponse, Integer, Hash)>] ClientGetItemResponse data, response status code and response headers
     def send_with_http_info(body, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DefaultApi.agencyclientsget ...'
+        @api_client.config.logger.debug 'Calling API:  ...'
       end
       # verify the required parameter 'body' is set
       if @api_client.config.client_side_validation && body.nil?
-        fail ArgumentError, "Missing the required parameter 'body' when calling DefaultApi.agencyclientsget"
+        fail ArgumentError, "Missing the required parameter 'body' when calling "
       end
 
       # resource path
@@ -42,7 +42,7 @@ module YandexDirectClient
       # http body (model)
       post_body = opts[:body] || @api_client.object_to_http_body(body)
 
-      return_type = opts[:return_type] || 'ClientGetItemResponse'
+      return_type = opts[:return_type] || 'ItemResponse'
 
       auth_names = opts[:auth_names] || ['newSecurityScheme']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -54,7 +54,7 @@ module YandexDirectClient
                                                         :return_type => return_type)
 
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DefaultApi#agencyclientsget\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: Api\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

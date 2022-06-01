@@ -1,34 +1,33 @@
-require 'date'
-
 module YandexDirectClient
-  class ClientGetItemResponse < BaseModel
-    attr_accessor :result
-    attr_accessor :limited_by
+  class Properties < BaseModel
+    attr_accessor :name
+    attr_accessor :value
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'result' => :'result',
-        :'limited_by' => :'LimitedBy'
+        name: :Name,
+        value: :Value
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'result' => :'Object',
-        :'limited_by' => :'Object'
+        name: 'Object',
+        value: 'Object'
       }
     end
 
+    # Initializes the object
+    # @param [Hash] attributes Model attributes in the form of hash
     def set_attributes(attributes = {})
-
-      if attributes.key?(:'result')
-        self.result = attributes[:'result']
+      if attributes.key?(:name)
+        self.name = attributes[:name]
       end
 
-      if attributes.key?(:'limited_by')
-        self.limited_by = attributes[:'limited_by']
+      if attributes.key?(:value)
+        self.value = attributes[:value]
       end
     end
 
@@ -43,14 +42,20 @@ module YandexDirectClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          result == o.result &&
-          limited_by == o.limited_by
+        value == o.value &&
+        name == o.name
+    end
+
+    # @see the `==` method
+    # @param [Object] Object to be compared
+    def eql?(o)
+      self == o
     end
 
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [result, limited_by].hash
+      [name, value].hash
     end
   end
 end

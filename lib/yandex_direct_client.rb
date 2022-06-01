@@ -6,6 +6,7 @@ require 'yandex_direct_client/configuration'
 
 # Models
 require 'yandex_direct_client/models/base_model'
+require 'yandex_direct_client/models/item_response'
 require 'yandex_direct_client/models/ad_group'
 require 'yandex_direct_client/models/ad_group_negative_keywords'
 require 'yandex_direct_client/models/ad_group_restricted_region_ids'
@@ -41,7 +42,6 @@ require 'yandex_direct_client/models/client_get_item_request'
 require 'yandex_direct_client/models/client_get_item_request_page'
 require 'yandex_direct_client/models/client_get_item_request_params'
 require 'yandex_direct_client/models/client_get_item_request_params_selection_criteria'
-require 'yandex_direct_client/models/client_get_item_response'
 require 'yandex_direct_client/models/client_get_item_response_result'
 require 'yandex_direct_client/models/client_notification'
 require 'yandex_direct_client/models/client_notification_email_subscriptions'
@@ -58,12 +58,20 @@ require 'yandex_direct_client/models/mobile_app_ad_group'
 require 'yandex_direct_client/models/mobile_app_ad_group_app_icon_moderation'
 require 'yandex_direct_client/models/smart_ad_group'
 require 'yandex_direct_client/models/text_ad_group_feed_params'
+require 'yandex_direct_client/models/params'
+require 'yandex_direct_client/models/result_data'
+require 'yandex_direct_client/models/request'
+require 'yandex_direct_client/models/currencies'
+require 'yandex_direct_client/models/properties'
+require 'yandex_direct_client/models/acion_result'
+require 'yandex_direct_client/models/exception_notification'
 
 # APIs
 require 'yandex_direct_client/api/default_api'
 require 'yandex_direct_client/api/api_agent_clients'
 require 'yandex_direct_client/api/api_campaign'
-require 'yandex_direct_client/api/api_ads'
+require 'yandex_direct_client/api/api_ads_group'
+require 'yandex_direct_client/api/api_dictionaries'
 
 module YandexDirectClient
   class << self

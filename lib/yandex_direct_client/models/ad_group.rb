@@ -48,64 +48,64 @@ module YandexDirectClient
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'id' => :'Id',
-        :'name' => :'Name',
-        :'campaign_id' => :'CampaignId',
-        :'region_ids' => :'RegionIds',
-        :'restricted_region_ids' => :'RestrictedRegionIds',
-        :'negative_keywords' => :'NegativeKeywords',
-        :'negative_keyword_shared_set_ids' => :'NegativeKeywordSharedSetIds',
-        :'tracking_params' => :'TrackingParams',
-        :'status' => :'Status',
-        :'serving_status' => :'ServingStatus',
-        :'type' => :'Type',
-        :'subtype' => :'Subtype',
-        :'mobile_app_ad_group' => :'MobileAppAdGroup',
-        :'dynamic_text_ad_group' => :'DynamicTextAdGroup',
-        :'dynamic_text_feed_ad_group' => :'DynamicTextFeedAdGroup',
-        :'smart_ad_group' => :'SmartAdGroup',
-        :'text_ad_group_feed_params' => :'TextAdGroupFeedParams'
+        id: :Id,
+        name: :Name,
+        campaign_id: :CampaignId,
+        region_ids: :RegionIds,
+        restricted_region_ids: :RestrictedRegionIds,
+        negative_keywords: :NegativeKeywords,
+        negative_keyword_shared_set_ids: :NegativeKeywordSharedSetIds,
+        tracking_params: :TrackingParams,
+        status: :Status,
+        serving_status: :ServingStatus,
+        type: :Type,
+        subtype: :Subtype,
+        mobile_app_ad_group: :MobileAppAdGroup,
+        dynamic_text_ad_group: :DynamicTextAdGroup,
+        dynamic_text_feed_ad_group: :DynamicTextFeedAdGroup,
+        smart_ad_group: :SmartAdGroup,
+        text_ad_group_feed_params: :TextAdGroupFeedParams
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'id' => :'Object',
-        :'name' => :'Object',
-        :'campaign_id' => :'Object',
-        :'region_ids' => :'Object',
-        :'restricted_region_ids' => :'Object',
-        :'negative_keywords' => :'Object',
-        :'negative_keyword_shared_set_ids' => :'Object',
-        :'tracking_params' => :'Object',
-        :'status' => :'Object',
-        :'serving_status' => :'Object',
-        :'type' => :'Object',
-        :'subtype' => :'Object',
-        :'mobile_app_ad_group' => :'Object',
-        :'dynamic_text_ad_group' => :'Object',
-        :'dynamic_text_feed_ad_group' => :'Object',
-        :'smart_ad_group' => :'Object',
-        :'text_ad_group_feed_params' => :'Object'
+        id: 'Object',
+        name: 'Object',
+        campaign_id: 'Object',
+        region_ids: 'Object',
+        restricted_region_ids: 'Object',
+        negative_keywords: 'Object',
+        negative_keyword_shared_set_ids: 'Object',
+        tracking_params: 'Object',
+        status: 'Object',
+        serving_status: 'Object',
+        type: 'Object',
+        subtype: 'Object',
+        mobile_app_ad_group: 'Object',
+        dynamic_text_ad_group: 'Object',
+        dynamic_text_feed_ad_group: 'Object',
+        smart_ad_group: 'Object',
+        text_ad_group_feed_params: 'Object'
       }
     end
 
     def set_attributes(attributes = {})
-      if attributes.key?(:'id')
-        self.id = attributes[:'id']
+      if attributes.key?(:id)
+        self.id = attributes[:id]
       end
 
-      if attributes.key?(:'name')
-        self.name = attributes[:'name']
+      if attributes.key?(:name)
+        self.name = attributes[:name]
       end
 
-      if attributes.key?(:'campaign_id')
-        self.campaign_id = attributes[:'campaign_id']
+      if attributes.key?(:campaign_id)
+        self.campaign_id = attributes[:campaign_id]
       end
 
-      if attributes.key?(:'region_ids')
-        if (value = attributes[:'region_ids']).is_a?(Array)
+      if attributes.key?(:region_ids)
+        if (value = attributes[:region_ids]).is_a?(Array)
           self.region_ids = value
         end
       end

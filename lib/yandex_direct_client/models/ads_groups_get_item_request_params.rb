@@ -8,6 +8,7 @@ module YandexDirectClient
     attr_accessor :smart_ad_group_field_names
     attr_accessor :text_ad_group_feed_params_field_names
     attr_accessor :page
+    attr_accessor :ad_groups
 
     FIELD_NAMES = ["CampaignId", "Id", "Name", "NegativeKeywords", "NegativeKeywordSharedSetIds", "RegionIds",
                    "RestrictedRegionIds", "ServingStatus", "Status", "Subtype", "TrackingParams", "Type"]
@@ -22,6 +23,7 @@ module YandexDirectClient
         :'dynamic_text_feed_ad_group_field_names' => :'DynamicTextFeedAdGroupFieldNames',
         :'smart_ad_group_field_names' => :'SmartAdGroupFieldNames',
         :'text_ad_group_feed_params_field_names' => :'TextAdGroupFeedParamsFieldNames',
+        :'ad_groups' => :'AdGroups',
         :'page' => :'Page'
       }
     end
@@ -36,6 +38,7 @@ module YandexDirectClient
         :'dynamic_text_feed_ad_group_field_names' => :'Object',
         :'smart_ad_group_field_names' => :'Object',
         :'text_ad_group_feed_params_field_names' => :'Object',
+        :'ad_groups' => :'Array<AdGroups>',
         :'page' => :'Object'
       }
     end
