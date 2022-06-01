@@ -1,36 +1,31 @@
-require 'date'
-
 module YandexDirectClient
-  class CampaignsGetItemRequestParamsPage < BaseModel
-    attr_accessor :limit
-    attr_accessor :offset
+  class Statistic < BaseModel
+    attr_accessor :clicks
+    attr_accessor :impressions
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'limit' => :'Limit',
-        :'offset' => :'Offset'
+        clicks: :Clicks,
+        impressions: :Impressions
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'limit' => :'Object',
-        :'offset' => :'Object'
+        clicks: 'Object',
+        impressions: 'Object'
       }
     end
 
-  
-    # Initializes the object
-    # @param [Hash] attributes Model attributes in the form of hash
     def set_attributes(attributes = {})
-      if attributes.key?(:'limit')
-        self.limit = attributes[:'limit']
+      if attributes.key?(:'clicks')
+        self.clicks = attributes[:'clicks']
       end
 
-      if attributes.key?(:'offset')
-        self.offset = attributes[:'offset']
+      if attributes.key?(:'impressions')
+        self.impressions = attributes[:'impressions']
       end
     end
 
@@ -45,14 +40,14 @@ module YandexDirectClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          limit == o.limit &&
-          offset == o.offset
+          clicks == o.clicks &&
+          impressions == o.impressions
     end
 
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [limit, offset].hash
+      [clicks, impressions].hash
     end
   end
 end

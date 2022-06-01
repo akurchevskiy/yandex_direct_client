@@ -1,23 +1,23 @@
 require 'date'
 
 module YandexDirectClient
-  class ClientGetItemRequestPage < BaseModel
+  class Page < BaseModel
     attr_accessor :limit
     attr_accessor :offset
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'limit' => :'Limit',
-        :'offset' => :'Offset'
+        limit: :Limit,
+        offset: :Offset
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'limit' => :'Object',
-        :'offset' => :'Object'
+        limit: 'Object',
+        offset: 'Object'
       }
     end
   

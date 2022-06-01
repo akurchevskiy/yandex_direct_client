@@ -2,12 +2,16 @@ module YandexDirectClient
   class Params < BaseModel
     attr_accessor :dictionary_names
     attr_accessor :ad_groups
+    attr_accessor :selection_criteria
+    attr_accessor :field_names
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         dictionary_names: :DictionaryNames,
-        ad_groups: :AdGroups
+        ad_groups: :AdGroups,
+        selection_criteria: :SelectionCriteria,
+        field_names: :FieldNames
       }
     end
 
@@ -15,7 +19,9 @@ module YandexDirectClient
     def self.openapi_types
       {
         dictionary_names: 'Array',
-        ad_groups: 'Array<AdGroup>'
+        ad_groups: 'Array<AdGroup>',
+        selection_criteria: 'SelectionCriteria',
+        field_names: 'Object'
       }
     end
 

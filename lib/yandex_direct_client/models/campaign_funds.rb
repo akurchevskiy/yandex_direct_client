@@ -8,20 +8,20 @@ module YandexDirectClient
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'sum' => :'Sum',
-        :'balance' => :'Balance',
-        :'balance_bonus' => :'BalanceBonus',
-        :'sum_available_for_transfer' => :'SumAvailableForTransfer'
+        sum: :Sum,
+        balance: :Balance,
+        balance_bonus: :BalanceBonus,
+        sum_available_for_transfer: :SumAvailableForTransfer
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'sum' => :'Object',
-        :'balance' => :'Object',
-        :'balance_bonus' => :'Object',
-        :'sum_available_for_transfer' => :'Object'
+        sum: 'Object',
+        balance: 'Object',
+        balance_bonus: 'Object',
+        sum_available_for_transfer: 'Object'
       }
     end
 

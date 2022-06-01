@@ -1,7 +1,5 @@
-require 'date'
-
 module YandexDirectClient
-  class Clients < BaseModel
+  class Client < BaseModel
     attr_accessor :account_quality
     attr_accessor :archived
     attr_accessor :client_id
@@ -21,34 +19,34 @@ module YandexDirectClient
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'account_quality' => :'AccountQuality',
-        :'archived' => :'Archived',
-        :'client_id' => :'ClientId',
-        :'client_info' => :'ClientInfo',
-        :'country_id' => :'CountryId',
-        :'created_at' => :'CreatedAt',
-        :'currency' => :'Currency',
-        :'grants' => :'Grants',
-        :'bonuses' => :'Bonuses',
-        :'login' => :'Login',
-        :'notification' => :'Notification'
+        account_quality: :AccountQuality,
+        archived: :Archived,
+        client_id: :ClientId,
+        client_info: :ClientInfo,
+        country_id: :CountryId,
+        created_at: :CreatedAt,
+        currency: :Currency,
+        grants: :Grants,
+        bonuses: :Bonuses,
+        login: :Login,
+        notification: :Notification
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'account_quality' => :'Object',
-        :'archived' => :'Object',
-        :'client_id' => :'Object',
-        :'client_info' => :'Object',
-        :'country_id' => :'Object',
-        :'created_at' => :'Object',
-        :'currency' => :'Object',
-        :'grants' => :'Object',
-        :'bonuses' => :'Object',
-        :'login' => :'Object',
-        :'notification' => :'Object'
+        account_quality: 'Object',
+        archived: 'Object',
+        client_id: 'Object',
+        client_info: 'Object',
+        country_id: 'Object',
+        created_at: 'Object',
+        currency: 'Object',
+        grants: 'Object',
+        bonuses: 'ClientBonuses',
+        login: 'Object',
+        notification: 'Notification'
       }
     end
   

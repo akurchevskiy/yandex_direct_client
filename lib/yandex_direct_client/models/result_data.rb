@@ -2,12 +2,16 @@ module YandexDirectClient
   class ResultData < BaseModel
     attr_accessor :currencies
     attr_accessor :add_results
+    attr_accessor :clients
+    attr_accessor :campaigns
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         currencies: :Currencies,
-      add_results: :AddResults
+        add_results: :AddResults,
+        clients: :Clients,
+        campaigns: :Campaigns
       }
     end
 
@@ -15,7 +19,9 @@ module YandexDirectClient
     def self.openapi_types
       {
         currencies: 'Array<Currencies>',
-        add_results: 'Array<ActionResult>'
+        add_results: 'Array<ActionResult>',
+        clients: 'Array<Client>',
+        campaigns: 'Array<Campaign>'
       }
     end
 

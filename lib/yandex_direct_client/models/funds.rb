@@ -12,18 +12,18 @@ module YandexDirectClient
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'mode' => :'Mode',
-        :'campaign_funds' => :'CampaignFunds',
-        :'shared_account_funds' => :'SharedAccountFunds'
+        mode: :Mode,
+        campaign_funds: :CampaignFunds,
+        shared_account_funds: :SharedAccountFunds
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'mode' => :'Object',
-        :'campaign_funds' => :'Object',
-        :'shared_account_funds' => :'Object'
+        mode: 'Object',
+        campaign_funds: 'CampaignFunds',
+        shared_account_funds: 'SharedAccountFunds'
       }
     end
   

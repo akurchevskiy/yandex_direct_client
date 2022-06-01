@@ -1,33 +1,33 @@
 require 'date'
 
 module YandexDirectClient
-  class CampaignsGetItemRequestPage < BaseModel
-    attr_accessor :limit
-    attr_accessor :offset
+  class SharedAccountFunds < BaseModel
+    attr_accessor :refund
+    attr_accessor :spend
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'limit' => :'Limit',
-        :'offset' => :'Offset'
+        refund: :Refund,
+        spend: :Spend
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'limit' => :'Object',
-        :'offset' => :'Object'
+        refund: 'Object',
+        spend: 'Object'
       }
     end
 
     def set_attributes(attributes = {})
-      if attributes.key?(:'limit')
-        self.limit = attributes[:'limit']
+      if attributes.key?(:'refund')
+        self.refund = attributes[:'refund']
       end
 
-      if attributes.key?(:'offset')
-        self.offset = attributes[:'offset']
+      if attributes.key?(:'spend')
+        self.spend = attributes[:'spend']
       end
     end
 
@@ -42,15 +42,14 @@ module YandexDirectClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          limit == o.limit &&
-          offset == o.offset
+          refund == o.refund &&
+          spend == o.spend
     end
-
 
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [limit, offset].hash
+      [refund, spend].hash
     end
   end
 end

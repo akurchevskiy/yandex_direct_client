@@ -1,7 +1,7 @@
 require 'date'
 
 module YandexDirectClient
-  class Campaigns < BaseModel
+  class Campaign < BaseModel
     attr_accessor :id
     attr_accessor :name
     attr_accessor :start_date
@@ -67,66 +67,66 @@ module YandexDirectClient
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'id' => :'Id',
-        :'name' => :'Name',
-        :'start_date' => :'StartDate',
-        :'type' => :'Type',
-        :'status' => :'Status',
-        :'state' => :'State',
-        :'status_payment' => :'StatusPayment',
-        :'status_clarification' => :'StatusClarification',
-        :'source_id' => :'SourceId',
-        :'statistics' => :'Statistics',
-        :'currency' => :'Currency',
-        :'funds' => :'Funds',
-        :'represented_by' => :'RepresentedBy',
-        :'daily_budget' => :'DailyBudget',
-        :'end_date' => :'EndDate',
-        :'negative_keywords' => :'NegativeKeywords',
-        :'blocked_ips' => :'BlockedIps',
-        :'excluded_sites' => :'ExcludedSites',
-        :'text_campaign' => :'TextCampaign',
-        :'mobile_app_campaign' => :'MobileAppCampaign',
-        :'dynamic_text_campaign' => :'DynamicTextCampaign',
-        :'cpm_banner_campaign' => :'CpmBannerCampaign',
-        :'smart_campaign' => :'SmartCampaign',
-        :'client_info' => :'ClientInfo',
-        :'notification' => :'Notification',
-        :'time_targeting' => :'TimeTargeting',
-        :'time_zone' => :'TimeZone'
+        id: :Id,
+        name: :Name,
+        start_date: :StartDate,
+        type: :Type,
+        status: :Status,
+        state: :State,
+        status_payment: :StatusPayment,
+        status_clarification: :StatusClarification,
+        source_id: :SourceId,
+        statistics: :Statistics,
+        currency: :Currency,
+        funds: :Funds,
+        represented_by: :RepresentedBy,
+        daily_budget: :DailyBudget,
+        end_date: :EndDate,
+        negative_keywords: :NegativeKeywords,
+        blocked_ips: :BlockedIps,
+        excluded_sites: :ExcludedSites,
+        text_campaign: :TextCampaign,
+        mobile_app_campaign: :MobileAppCampaign,
+        dynamic_text_campaign: :DynamicTextCampaign,
+        cpm_banner_campaign: :CpmBannerCampaign,
+        smart_campaign: :SmartCampaign,
+        client_info: :ClientInfo,
+        notification: :Notification,
+        time_targeting: :TimeTargeting,
+        time_zone: :TimeZone
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'id' => :'Object',
-        :'name' => :'Object',
-        :'start_date' => :'Object',
-        :'type' => :'Object',
-        :'status' => :'Object',
-        :'state' => :'Object',
-        :'status_payment' => :'Object',
-        :'status_clarification' => :'Object',
-        :'source_id' => :'Object',
-        :'statistics' => :'Object',
-        :'currency' => :'Object',
-        :'funds' => :'Object',
-        :'represented_by' => :'Object',
-        :'daily_budget' => :'Object',
-        :'end_date' => :'Object',
-        :'negative_keywords' => :'Object',
-        :'blocked_ips' => :'Object',
-        :'excluded_sites' => :'Object',
-        :'text_campaign' => :'Object',
-        :'mobile_app_campaign' => :'Object',
-        :'dynamic_text_campaign' => :'Object',
-        :'cpm_banner_campaign' => :'Object',
-        :'smart_campaign' => :'Object',
-        :'client_info' => :'Object',
-        :'notification' => :'Object',
-        :'time_targeting' => :'Object',
-        :'time_zone' => :'Object'
+        id: 'Object',
+        name: 'Object',
+        start_date: 'Object',
+        type: 'Object',
+        status: 'Object',
+        state: 'Object',
+        status_payment: 'Object',
+        status_clarification: 'Object',
+        source_id: 'Object',
+        statistics: 'Statistic',
+        currency: 'Object',
+        funds: 'Funds',
+        represented_by: 'Object',
+        daily_budget: 'Object',
+        end_date: 'Object',
+        negative_keywords: 'Object',
+        blocked_ips: 'Object',
+        excluded_sites: 'Object',
+        text_campaign: 'Object',
+        mobile_app_campaign: 'Object',
+        dynamic_text_campaign: 'Object',
+        cpm_banner_campaign: 'Object',
+        smart_campaign: 'Object',
+        client_info: 'Object',
+        notification: 'Object',
+        time_targeting: 'Object',
+        time_zone: 'Object'
       }
     end
   
