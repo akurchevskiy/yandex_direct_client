@@ -27,7 +27,6 @@ module YandexDirectClient
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def set_attributes(attributes = {})
-
       if attributes.key?(:'privilege')
         self.privilege = attributes[:'privilege']
       end

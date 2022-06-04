@@ -22,7 +22,6 @@ module YandexDirectClient
     end
 
     def set_attributes(attributes = {})
-
       if attributes.key?(:'element')
         self.element = attributes[:'element']
       end

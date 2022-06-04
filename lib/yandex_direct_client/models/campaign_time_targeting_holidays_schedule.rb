@@ -28,7 +28,6 @@ module YandexDirectClient
     end
 
     def set_attributes(attributes = {})
-
       if attributes.key?(:'suspend_on_holidays')
         self.suspend_on_holidays = attributes[:'suspend_on_holidays']
       end

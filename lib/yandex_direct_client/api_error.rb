@@ -41,6 +41,5 @@ module YandexDirectClient
 
       msg
     end
-
   end
 end

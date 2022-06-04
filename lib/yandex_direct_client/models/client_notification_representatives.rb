@@ -25,7 +25,6 @@ module YandexDirectClient
     end
 
     def set_attributes(attributes = {})
-
       if attributes.key?(:'login')
         self.login = attributes[:'login']
       end

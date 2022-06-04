@@ -1,6 +1,5 @@
 module YandexDirectClient
   class ApiAgentClients < DefaultApi
-
     def initialize(api_client = ApiClient.new)
       super
       @local_path = '/agencyclients'

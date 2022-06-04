@@ -97,7 +97,7 @@ module YandexDirectClient
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] target_carrier Object to be assigned
     def target_carrier=(target_carrier)
-      validator = EnumAttributeValidator.new('Object',TARGET_CARRIERS)
+      validator = EnumAttributeValidator.new('Object', TARGET_CARRIERS)
       unless validator.valid?(target_carrier)
         fail ArgumentError, "invalid value for \"target_carrier\", must be one of #{validator.allowable_values}."
       end
