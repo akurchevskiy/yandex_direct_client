@@ -1,5 +1,3 @@
-require 'date'
-
 module YandexDirectClient
   class SelectionCriteria < BaseModel
     attr_accessor :logins
@@ -9,6 +7,10 @@ module YandexDirectClient
     attr_accessor :states
     attr_accessor :statuses
     attr_accessor :statuses_payment
+    attr_accessor :campaign_ids
+    attr_accessor :serving_statuses
+    attr_accessor :app_icon_statuses
+    attr_accessor :negative_keyword_ids
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -19,7 +21,11 @@ module YandexDirectClient
         types: :Types,
         states: :States,
         statuses: :Statuses,
-        statuses_payment: :StatusesPayment
+        statuses_payment: :StatusesPayment,
+        campaign_ids: :CampaignIds,
+        serving_statuses: :ServingStatuses,
+        app_icon_statuses: :AppIconStatuses,
+        negative_keyword_ids: :NegativeKeywordSharedSetIds
       }
     end
 
@@ -28,11 +34,15 @@ module YandexDirectClient
       {
         logins: 'Object',
         archived: 'Object',
-        ids: 'Object',
+        ids: 'Array',
         types: 'Object',
         states: 'Object',
         statuses: 'Object',
-        statuses_payment: 'Object'
+        statuses_payment: 'Object',
+        campaign_ids: 'Array',
+        serving_statuses: 'Array',
+        app_icon_statuses: 'Array',
+        negative_keyword_ids: 'Array'
       }
     end
 
@@ -113,7 +123,8 @@ module YandexDirectClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [logins, archived, ids, types, states, statuses, statuses_payment].hash
+      [logins, archived, ids, types, states, statuses, statuses_payment, campaign_ids, app_icon_statuses,
+       negative_keyword_ids].hash
     end
   end
 end

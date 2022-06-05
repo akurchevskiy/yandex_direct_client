@@ -1,26 +1,26 @@
 module YandexDirectClient
-  class AdGroupRestrictedRegionIds < BaseModel
+  class RestrictedRegionIds < BaseModel
     attr_accessor :items
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'items' => :'Items'
+        items: :Items
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'items' => :'Object'
+        items: 'Array<Integer>'
       }
     end
   
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def set_attributes(attributes = {})
-      if attributes.key?(:'items')
-        if (value = attributes[:'items']).is_a?(Array)
+      if attributes.key?(:items)
+        if (value = attributes[:items]).is_a?(Array)
           self.items = value
         end
       end

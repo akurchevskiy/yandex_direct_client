@@ -125,6 +125,7 @@ module YandexDirectClient
           end
         end
       else # model
+        p "#{type} -> #{value}"
         YandexDirectClient.const_get(type).build_from_hash(value)
       end
     end

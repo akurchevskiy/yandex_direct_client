@@ -1,33 +1,29 @@
+
 module YandexDirectClient
-  class AdsGroupsGetItemRequest < BaseModel
-    attr_accessor :method
-    attr_accessor :params
+  class NegativeKeywords < BaseModel
+    attr_accessor :items
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'method' => :'method',
-        :'params' => :'params'
+        items: :Items
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'method' => :'Object',
-        :'params' => :'Object'
+        items:'Array<String>'
       }
     end
   
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def set_attributes(attributes = {})
-      if attributes.key?(:'method')
-        self.method = attributes[:'method']
-      end
-
-      if attributes.key?(:'params')
-        self.params = attributes[:'params']
+      if attributes.key?(:items)
+        if (value = attributes[:items]).is_a?(Array)
+          self.items = value
+        end
       end
     end
 
@@ -42,20 +38,13 @@ module YandexDirectClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          method == o.method &&
-          params == o.params
-    end
-
-    # @see the `==` method
-    # @param [Object] Object to be compared
-    def eql?(o)
-      self == o
+          items == o.items
     end
 
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [method, params].hash
+      [items].hash
     end
   end
 end

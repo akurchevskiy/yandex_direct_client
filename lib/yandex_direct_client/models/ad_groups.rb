@@ -1,5 +1,5 @@
 module YandexDirectClient
-  class AdGroup < BaseModel
+  class AdGroups < BaseModel
     attr_accessor :id
     attr_accessor :name
     attr_accessor :campaign_id
@@ -40,11 +40,19 @@ module YandexDirectClient
     SUBTYPE_KEYWORDS = 'KEYWORDS'
     SUBTYPE_USER_PROFILE = 'USER_PROFILE'
 
+    APP_ICON_STATUS_ACCEPTED = 'ACCEPTED'
+    APP_ICON_STATUS_MODERATION = 'MODERATION'
+    APP_ICON_STATUS_REJECTED = 'REJECTED'
+
     STATUSES = [STATUS_ACCEPTED, STATUS_DRAFT, STATUS_MODERATION, STATUS_PREACCEPTED, STATUS_REJECTED]
     SERVING_STATUSES = [SERVING_STATUS_ELIGIBLE, SERVING_STATUS_RARELY_SERVED]
     TYPES = [TYPE_TEXT_AD_GROUP, TYPE_MOBILE_APP_AD_GROUP, TYPE_DYNAMIC_TEXT_AD_GROUP, TYPE_CPM_BANNER_AD_GROUP,
              TYPE_CPM_VIDEO_AD_GROUP, TYPE_SMART_AD_GROUP]
     SUBTYPES = [SUBTYPE_WEBPAGE, SUBTYPE_FEED, SUBTYPE_NONE, SUBTYPE_KEYWORDS, SUBTYPE_USER_PROFILE]
+
+    APP_ICON_STATUSES = [APP_ICON_STATUS_ACCEPTED, APP_ICON_STATUS_MODERATION, APP_ICON_STATUS_REJECTED]
+    FIELD_NAMES = ["CampaignId", "Id", "Name", "NegativeKeywords", "NegativeKeywordSharedSetIds", "RegionIds",
+                   "RestrictedRegionIds", "ServingStatus", "Status", "Subtype", "TrackingParams", "Type"]
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -75,8 +83,8 @@ module YandexDirectClient
         name: 'Object',
         campaign_id: 'Object',
         region_ids: 'Object',
-        restricted_region_ids: 'Object',
-        negative_keywords: 'Object',
+        restricted_region_ids: 'RestrictedRegionIds',
+        negative_keywords: 'NegativeKeywords',
         negative_keyword_shared_set_ids: 'Object',
         tracking_params: 'Object',
         status: 'Object',
