@@ -5,6 +5,7 @@ module YandexDirectClient
     attr_accessor :clients
     attr_accessor :campaigns
     attr_accessor :ad_groups
+    attr_accessor :keywords
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -13,7 +14,8 @@ module YandexDirectClient
         add_results: :AddResults,
         clients: :Clients,
         campaigns: :Campaigns,
-        ad_groups: :AdGroups
+        ad_groups: :AdGroups,
+        keywords: :Keywords
       }
     end
 
@@ -24,7 +26,8 @@ module YandexDirectClient
         add_results: 'Array<ActionResult>',
         clients: 'Array<Client>',
         campaigns: 'Array<Campaign>',
-        ad_groups: 'Array<AdGroups>'
+        ad_groups: 'Array<AdGroups>',
+        keywords: 'Array<Keyword>'
       }
     end
 
@@ -36,6 +39,9 @@ module YandexDirectClient
       end
       if attributes.key?(:ad_groups)
         self.ad_groups = attributes[:ad_groups]
+      end
+      if attributes.key?(:keywords)
+        self.keywords = attributes[:keywords]
       end
     end
 
@@ -63,7 +69,7 @@ module YandexDirectClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [currencies, ad_groups].hash
+      [currencies, ad_groups, keywords].hash
     end
   end
 end

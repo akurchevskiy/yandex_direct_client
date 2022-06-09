@@ -49,6 +49,9 @@ require 'yandex_direct_client/models/currencies'
 require 'yandex_direct_client/models/properties'
 require 'yandex_direct_client/models/acion_result'
 require 'yandex_direct_client/models/exception_notification'
+require 'yandex_direct_client/models/keyword'
+require 'yandex_direct_client/models/autotargeting_category'
+require 'yandex_direct_client/models/item_category'
 
 # APIs
 require 'yandex_direct_client/api/default_api'
@@ -56,6 +59,7 @@ require 'yandex_direct_client/api/api_agent_clients'
 require 'yandex_direct_client/api/api_campaign'
 require 'yandex_direct_client/api/api_ads_group'
 require 'yandex_direct_client/api/api_dictionaries'
+require 'yandex_direct_client/api/api_keyword'
 
 module YandexDirectClient
   class << self
